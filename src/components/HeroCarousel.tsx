@@ -17,7 +17,7 @@ export function HeroCarousel() {
         <div className="pointer-events-none relative z-10 flex h-full items-center justify-center px-6">
           <div className="max-w-3xl text-center pointer-events-auto mb-30">
             <p className="text-sm uppercase tracking-[0.4em] text-[var(--color-highlight)]">
-              Designer & Developer
+              Web Designer & Developer
             </p>
             <h1 className="mt-4 text-4xl font-semibold text-[var(--color-text-primary)] sm:text-5xl">
               Hello, I&apos;m Chris Manfredi

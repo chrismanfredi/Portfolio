@@ -176,7 +176,7 @@ export default function EducationPage() {
         <div className="grid gap-8 lg:grid-cols-[1fr_2fr]">
           <aside
             id="contact"
-            className="scroll-mt-32 mr-8 rounded-3xl border border-[var(--color-secondary)]/40 bg-[var(--color-primary)]/50 p-8 shadow-lg shadow-black/15"
+            className="order-2 scroll-mt-32 rounded-3xl border border-[var(--color-secondary)]/40 bg-[var(--color-primary)]/50 p-8 shadow-lg shadow-black/15 lg:order-1 lg:mr-8"
           >
             <div className="space-y-5">
               <h3 className="text-2xl font-semibold text-[var(--color-text-primary)]">
@@ -257,7 +257,7 @@ export default function EducationPage() {
               ) : null}
             </form>
           </aside>
-          <div className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(0,1fr))] xl:[grid-template-columns:repeat(2,minmax(0,1fr))]">
+          <div className="order-1 grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(0,1fr))] xl:[grid-template-columns:repeat(2,minmax(0,1fr))] lg:order-2">
             {filteredPortfolio.map((item) => (
               <div
                 key={item.title}

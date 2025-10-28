@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "Portfolio of Chris Manfredi - a developer and designer crafting digital products with a focus on usability, performance, and brand storytelling.",
   metadataBase: new URL("https://cmanfredi.dev"),
   openGraph: {
-    title: "Chris Manfredi | Developer & Designer",
+    title: "Chris Manfredi | Web Developer & Designer",
     description:
       "Explore selected work, experience, and ways to collaborate with Chris Manfredi.",
     url: "https://cmanfredi.dev",

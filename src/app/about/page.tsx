@@ -9,14 +9,14 @@ export default function AboutPage() {
         id="about"
         className="scroll-mt-32 flex flex-col items-center gap-10 text-center sm:flex-row sm:items-start sm:text-left"
       >
-        <div className="relative mx-auto h-48 w-48 overflow-hidden rounded-full shadow-2xl shadow-black/40 sm:mx-0">
+        <div className="relative mx-auto h-48 w-48 overflow-hidden rounded-full shadow-2xl shadow-black/40 block sm:hidden lg:block lg:mx-0 lg:h-64 lg:w-64 lg:rounded-3xl xl:h-72 xl:w-72">
           <Image
             src="/4.jpg"
             alt="Portrait of Chris Manfredi"
             fill
             priority
-            sizes="(max-width: 640px) 192px, 192px"
-            className="object-cover"
+            sizes="(max-width: 639px) 192px, (max-width: 1023px) 0px, 288px"
+            className="object-cover lg:object-contain"
           />
         </div>
         <div className="max-w-3xl space-y-6">
