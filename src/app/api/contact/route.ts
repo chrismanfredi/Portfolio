@@ -40,7 +40,7 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         from: fromEmail,
-        to: CONTACT_RECIPIENT,
+        to: [CONTACT_RECIPIENT],
         reply_to: email,
         subject: `New contact from ${name}`,
         text: [
@@ -67,7 +67,8 @@ export async function POST(request: Request) {
       );
     }
 
-    return NextResponse.json({ success: true });
+    const body = (await response.json()) as { id?: string };
+    return NextResponse.json({ success: true, id: body.id });
   } catch (error) {
     console.error("Unexpected contact submission error:", error);
     return NextResponse.json(

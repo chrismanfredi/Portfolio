@@ -51,7 +51,7 @@ export function Footer() {
         </div>
         <div className="flex flex-wrap items-center gap-4">
           <a
-            href="mailto:hello@cmanfredi.dev"
+            href="mailto:chrismanfredi11@gmail.com"
             className="rounded-full bg-[var(--color-accent)] px-5 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-white transition-colors duration-300 hover:bg-[var(--color-highlight)]"
           >
             Say hello
