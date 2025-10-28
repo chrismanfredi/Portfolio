@@ -4,7 +4,16 @@ import Image from "next/image";
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import { Card } from "@/components/Card";
 
-const timelineItems = [
+type TimelineItem = {
+  title: string;
+  subtitle: string;
+  description: string;
+  period: string;
+  imageSrc: string;
+  caption?: string;
+};
+
+const timelineItems: TimelineItem[] = [
   {
     title: "Stonington High School",
     subtitle: "Pawcatuck, CT",
