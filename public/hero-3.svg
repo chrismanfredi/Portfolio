@@ -1,0 +1,21 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0A2342"/>
+  <g opacity="0.55" filter="url(#f1)">
+    <path d="M200 820L420 520L740 780L1080 380L1340 620L1600 260" stroke="#64B5F6" stroke-width="80" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g opacity="0.3">
+    <rect x="1080" y="120" width="260" height="260" rx="40" fill="url(#grad4)"/>
+    <rect x="260" y="260" width="200" height="200" rx="36" fill="#3A7CA5"/>
+    <rect x="560" y="80" width="140" height="140" rx="28" fill="#64B5F6"/>
+  </g>
+  <defs>
+    <filter id="f1" x="60" y="120" width="1560" height="780" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="40" result="blur1"/>
+      <feBlend in="SourceGraphic" in2="blur1" mode="screen"/>
+    </filter>
+    <linearGradient id="grad4" x1="1210" y1="120" x2="1210" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#64B5F6" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#3A7CA5" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+</svg>

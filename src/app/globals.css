@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #f8f8f8;
+  --color-secondary: #e5e5e5;
+  --color-accent: #3b3d3d;
+  --color-highlight: #565858;
+  --color-text-primary: #1f2933;
+  --color-text-secondary: #4b5563;
+  --color-background: #ededed;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), var(--font-sans), system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,24 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0A2342"/>
+  <g opacity="0.6" filter="url(#f0)">
+    <path d="M16 736C266 596 454 578 640 640C826 702 1128 804 1584 576" stroke="#64B5F6" stroke-width="140"/>
+  </g>
+  <g opacity="0.45">
+    <circle cx="1300" cy="200" r="240" fill="url(#g0)"/>
+    <circle cx="280" cy="680" r="200" fill="url(#g1)"/>
+  </g>
+  <defs>
+    <filter id="f0" x="-180" y="344" width="1964" height="504" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="80" result="blur"/>
+      <feBlend in="SourceGraphic" in2="blur" mode="screen"/>
+    </filter>
+    <radialGradient id="g0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1300 200) rotate(70) scale(240)">
+      <stop stop-color="#3A7CA5"/>
+      <stop offset="1" stop-color="#0F172A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(280 680) rotate(90) scale(200)">
+      <stop stop-color="#64B5F6"/>
+      <stop offset="1" stop-color="#0F172A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
