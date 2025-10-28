@@ -63,6 +63,7 @@ export default function EducationPage() {
     message: "",
   });
   const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [contactError, setContactError] = useState<string | null>(null);
   const filteredPortfolio =
     activeFilter === "All"
       ? portfolioItems
@@ -75,18 +76,43 @@ export default function EducationPage() {
     if (contactSubmitted) {
       setContactSubmitted(false);
     }
+    if (contactError) {
+      setContactError(null);
+    }
     setContactForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleContactSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setContactSubmitting(true);
-    console.log("Contact form submission:", contactForm);
-    window.setTimeout(() => {
-      setContactSubmitting(false);
+    setContactError(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(contactForm),
+      });
+
+      if (!response.ok) {
+        const data = (await response.json()) as { error?: string };
+        throw new Error(data.error ?? "Unable to send message right now.");
+      }
+
       setContactSubmitted(true);
       setContactForm({ name: "", email: "", message: "" });
-    }, 600);
+    } catch (error) {
+      console.error("Failed to send contact email:", error);
+      setContactError(
+        error instanceof Error
+          ? error.message
+          : "Unable to send message right now."
+      );
+    } finally {
+      setContactSubmitting(false);
+    }
   };
 
   return (
@@ -253,6 +279,11 @@ export default function EducationPage() {
               {contactSubmitted ? (
                 <p className="text-center text-xs uppercase tracking-[0.28em] text-[var(--color-highlight)]">
                   Message sent. Talk soon!
+                </p>
+              ) : null}
+              {contactError ? (
+                <p className="text-center text-xs uppercase tracking-[0.28em] text-red-400">
+                  {contactError}
                 </p>
               ) : null}
             </form>

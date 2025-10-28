@@ -29,23 +29,52 @@ export default function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = event.target;
+    if (submitted) {
+      setSubmitted(false);
+    }
+    if (error) {
+      setError(null);
+    }
     setFormState((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSubmitting(true);
-    console.log("Contact form submission:", formState);
-    window.setTimeout(() => {
-      setIsSubmitting(false);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      });
+
+      if (!response.ok) {
+        const data = (await response.json()) as { error?: string };
+        throw new Error(data.error ?? "Unable to send message right now.");
+      }
+
       setSubmitted(true);
       setFormState({ name: "", email: "", message: "" });
-    }, 600);
+    } catch (submissionError) {
+      console.error("Failed to send contact email:", submissionError);
+      setError(
+        submissionError instanceof Error
+          ? submissionError.message
+          : "Unable to send message right now."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -166,6 +195,11 @@ export default function ContactPage() {
         {submitted ? (
           <p className="text-center text-sm uppercase tracking-[0.28em] text-[var(--color-highlight)]">
             Message sent. Talk soon!
+          </p>
+        ) : null}
+        {error ? (
+          <p className="text-center text-sm uppercase tracking-[0.28em] text-red-400">
+            {error}
           </p>
         ) : null}
       </form>
