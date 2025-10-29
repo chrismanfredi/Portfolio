@@ -1,6 +1,6 @@
 const socialLinks = [
   {
-    href: "https://github.com/cmanfredi",
+    href: "https://github.com/chrismanfredi",
     label: "GitHub",
     icon: (
       <svg
@@ -14,7 +14,7 @@ const socialLinks = [
     ),
   },
   {
-    href: "https://www.linkedin.com/in/cmanfredi",
+    href: "https://www.linkedin.com/in/christopher-manfredi-3a381b205/",
     label: "LinkedIn",
     icon: (
       <svg
