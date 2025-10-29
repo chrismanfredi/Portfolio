@@ -28,7 +28,7 @@ const socialLinks = [
     ),
   },
   {
-    href: "mailto:hello@cmanfredi.dev",
+    href: "mailto:chrismanfredi11@gmail.com",
     label: "Email",
     icon: (
       <svg
